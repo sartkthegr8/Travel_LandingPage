@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page - With Background Video Slider | Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Travel</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="6.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+    
+      <div class="content active">
+        <h1>Wonderful.<br><span>Island</span></h1>
+       <p>आइए आपको ले चलें, देवभूमि उत्तराखंड की ओर,
+        जहां सुंदरता है अपार, वहां है हमारा सफर।</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Camping.<br><span>Enjoy</span></h1>
+        <p>हमारा यह सफर ले जाएगा आपको सदा यादों में,
+            उत्तराखंड की अनदेखी जगहों का होगा सफर बेहतरीन।</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Adventures.<br><span>Off Road</span></h1>
+        <p>शिविर से लेकर सफर तक, हम हैं सबसे अनोखे,
+            अपनी यात्रा को बनाएं यादगार उन अनुभवों के साथ जो होंगे आपके साथ हमेशा।</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Road Trip.<br><span>Together</span></h1>
+        <p>घूमें उत्तराखंड के पर्वतों की चोटियों पर,
+            जानें उनकी अनसुलझी कहानियों का जोर।</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Feel Nature.<br><span>Relax</span></h1>
+        <p>देवभूमि के रंगों से सजी हमारी यात्रा,
+            बन जाएगी आपकी जिंदगी में एक खूबसूरत यादगार।</p>
+        <a href="#">Read More</a>
+      </div>
+      
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
+      
